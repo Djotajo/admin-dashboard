@@ -1,0 +1,34 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: aquamarine;
+}
+
+main {
+    background-color: blueviolet;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.header {
+    background-color: coral;
+}
+
+.content {
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.projects {
+    background-color: lightblue;
+}
+
+.news {
+    background-color: lightblue;
+    border: 1px solid black;
+}
