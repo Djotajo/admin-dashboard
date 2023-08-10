@@ -170,3 +170,26 @@ h3 {
     align-content: end;
     justify-content: center;
 }
+
+.trending {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2vh;
+}
+
+.trending > div {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    border: 1px solid black;
+}
+
+.announcements {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2vh;
+    border: 1px solid black;
+}
