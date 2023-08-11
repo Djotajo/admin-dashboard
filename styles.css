@@ -1,9 +1,17 @@
+html {
+    height:100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
     display: grid;
+    height:100%;
+    max-height: 100vh;
     grid-template-columns: 1fr 5fr;
-    height: 100vh;
-    width: 100vw;
     font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .sidebar {
@@ -12,11 +20,15 @@ body {
     grid-template-rows: 1fr 4fr 2fr 4fr;
     row-gap: 3vh;
     min-width: 222px;
+    overflow: hidden;
 }
 
 main {
     display: grid;
     grid-template-rows: 1fr 5fr;
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow: hidden;
 }
 
 .header {
@@ -28,14 +40,16 @@ main {
 }
 
 .content {
-    background-color: blue;
+    background-color: #e2e8f0;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
 
-.projects {
+/* .projects {
     background-color: lightblue;
-}
+} */
 
 .logo {
     display: grid;
@@ -114,7 +128,6 @@ h3 {
 .notifications svg {
     min-height: 0;
     max-height: 3vh;
-    justify-self: end;
 }
 
 .hello {
@@ -190,17 +203,17 @@ h3 {
 
 .projects {
     display: grid;
-    grid-template-rows: 1fr repeat(3, 4fr);
+    grid-template-rows: 50px repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 2vw;
+    gap: 1vw;
     padding: 1vw;
+    box-sizing: border-box;
 }
 
 .popular {
-    background-color: lightblue;
     border: 1px solid black;
     display: grid;
-    grid-template-rows: 1fr 5fr 1fr 5fr;
+    grid-template-rows: 50px 1fr 50px 1fr;
     grid-template-columns: repeat(1fr);
     gap: 1vh;
     padding: 1vw;
@@ -212,31 +225,34 @@ h3 {
 
 }
 
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .projects .heading {
     display: grid;
     grid-column: 1 / 3;
     align-items: center;
-    font-size: 20px;
-    border: 1px solid black;
+    /* font-size: 20px; */
     align-content: end;
     justify-content: center;
 }
 
 .popular div {
-    border: 1px solid black;
     border-radius: 5px;
 }
 
 .popular .heading {
     display: grid;
     align-items: center;
-    font-size: 20px;
-    border: 1px solid black;
+    /* font-size: 20px; */
     align-content: end;
     justify-content: center;
 }
 
 .trending {
+    background-color: white;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr;
@@ -246,8 +262,24 @@ h3 {
 
 .trending > div {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    border: 1px solid black;
+    grid-template-columns: 2fr 4fr;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.trending > div > :nth-child(2) {
+    justify-self: start;
+}
+
+.trending p {
+    margin: 0;
+    padding: 1px;
+}
+
+.trending > div > :nth-child(2) > :nth-child(2) {
+    color: #636363;
 }
 
 .announcements {
@@ -257,4 +289,31 @@ h3 {
     grid-template-rows: repeat(3, 1fr);
     gap: 2vh;
     border: 1px solid black;
+}
+
+.trending > div > :nth-child(1) {
+    display: grid;
+    border-radius: 50%;
+    overflow: hidden;
+    max-height: 5vh;
+    max-width: 2vw;
+    padding: 10px;
+    background-color: #facc15;
+    /* display: grid;
+    border-radius: 50%;
+    overflow: hidden;
+    max-height: 6vh;
+    max-width: 4vw;
+    background-color: #facc15;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 5px; */
+}
+
+.trending > div img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
 }
